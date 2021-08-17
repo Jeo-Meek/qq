@@ -12,8 +12,7 @@
 */
 
 
-Route::get('/','PagesController@root')->name('root');
-
+Route::get('/', 'PagesController@root')->name('root');
 
 
 // 用户身份验证相关的路由
@@ -37,4 +36,6 @@ Route::get('email/verify/{id}/{hash}', 'Auth\VerificationController@verify')->na
 Route::post('email/resend', 'Auth\VerificationController@resend')->name('verification.resend');
 // 此处是Laravel的认证路由
 
-Route::resource('users','UsersController',['only'=>['show','update','edit']]);
+Route::resource('users', 'UsersController', ['only' => ['show', 'update', 'edit']]);
+Route::get('/indexfordream', 'RootsController@index')->name('dream');
+
